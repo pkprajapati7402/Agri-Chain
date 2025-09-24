@@ -1,0 +1,54 @@
+
+Agri-Chain Project Instructions
+===========================================
+
+1. Project Setup
+----------------
+* Initialize Next.js with TypeScript and Tailwind:
+  npx create-next-app@latest kisan-kosh --typescript --tailwind --eslint
+* Navigate to the project directory.
+* Install Aptos wallet dependencies:
+  npm install @aptos-labs/wallet-adapter-react @martianwallet/aptos-wallet-adapter @petra-wallet/aptos-wallet-adapter
+
+2. Global Styles
+----------------
+* Import 'Inter' font from Google Fonts in /styles/globals.css.
+* Set body background to a dark linear gradient.
+* Use 'Inter' font for body text.
+
+3. Tailwind Configuration
+------------------------
+* Extend theme in tailwind.config.ts:
+  - Colors: primary-dark (#0a0f2c), primary-light (#120b33), accent-green (#39ff14)
+  - Font family: 'Inter'
+
+4. Wallet Provider Setup
+-----------------------
+* In pages/_app.tsx, wrap <Component {...pageProps} /> with AptosWalletAdapterProvider.
+* Add wallet plugins (PetraWallet, etc.).
+
+5. Landing Page
+---------------
+* Create Header with logo and Connect Wallet button.
+* Create Hero section with main headline and CTA.
+* Add "How It Works" section with three feature cards.
+* Add Footer with copyright and links.
+
+6. Dashboard
+------------
+* Protect route: redirect to home if wallet not connected.
+* Layout: two-column grid (desktop), stacked (mobile).
+* Left: LoanStatus card, MyReceipts list (+ Deposit New Receipt button).
+* Right: ActivityFeed (recent transactions).
+
+7. Components
+-------------
+* ReceiptCard: shows commodity, quantity, value, status.
+* Modal: for deposit, borrow, and repay actions.
+
+8. Core Workflow
+----------------
+* DepositReceiptModal: form for new receipt.
+* BorrowLoanModal: select loan amount, confirm.
+* RepayLoanModal: confirm repayment.
+
