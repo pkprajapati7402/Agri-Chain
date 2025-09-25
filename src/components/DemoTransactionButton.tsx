@@ -56,7 +56,7 @@ export function DemoTransactionButton() {
     <div className="fixed bottom-6 right-6 z-50 space-y-4">
       {/* Transaction Type Selector */}
       <div className="bg-gray-900/90 backdrop-blur-xl border border-gray-700 rounded-2xl p-4">
-        <div className="text-white text-sm font-medium mb-3">Demo Transaction:</div>
+        <div className="text-white text-sm font-medium mb-3">DTransactions:</div>
         <div className="flex flex-col space-y-2">
           {Object.entries(transactionLabels).map(([type, label]) => (
             <button
