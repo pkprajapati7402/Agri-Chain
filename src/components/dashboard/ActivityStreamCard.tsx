@@ -93,7 +93,7 @@ export function ActivityStreamCard() {
           {filterOptions.map((option) => (
             <button
               key={option.key}
-              onClick={() => setFilter(option.key as any)}
+              onClick={() => setFilter(option.key as typeof filter)}
               className={`
                 flex items-center space-x-2 px-3 py-2 rounded-full text-sm font-medium transition-all duration-300 whitespace-nowrap
                 ${filter === option.key 

@@ -46,7 +46,7 @@ export function ActiveLoanCard() {
       <div className="backdrop-blur-xl bg-gradient-to-br from-green-500/10 to-emerald-500/10 border border-green-500/20 rounded-3xl p-8">
         <div className="text-center">
           <div className="text-6xl mb-4">🌟</div>
-          <h3 className="text-2xl font-bold text-white mb-4">Ready to Unlock Your Crop's Value?</h3>
+          <h3 className="text-2xl font-bold text-white mb-4">Ready to Unlock Your Crop&apos;s Value?</h3>
           <p className="text-gray-300 mb-6">
             No active loans. Your crop receipts are ready to be leveraged for instant liquidity.
           </p>

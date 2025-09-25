@@ -133,7 +133,7 @@ export function ComprehensiveFAQ() {
             Frequently Asked Questions
           </h2>
           <p className="text-xl text-gray-300 max-w-4xl mx-auto leading-relaxed">
-            Got questions? We've got answers! Find everything you need to know about Kisan Kosh and how it can transform your agricultural business.
+            Got questions? We&apos;ve got answers! Find everything you need to know about Kisan Kosh and how it can transform your agricultural business.
           </p>
         </div>
 
@@ -256,7 +256,7 @@ export function ComprehensiveFAQ() {
         <div className="text-center mt-16">
           <div className="backdrop-blur-xl bg-gradient-to-r from-accent-green/10 via-blue-500/10 to-purple-500/10 border border-white/20 rounded-3xl p-8 max-w-4xl mx-auto">
             <h3 className="text-3xl font-bold text-white mb-4">
-              Didn't Find Your Answer?
+              Didn&apos;t Find Your Answer?
             </h3>
             <p className="text-gray-300 mb-6 text-lg">
               Our expert team is always ready to help you with personalized assistance for your specific needs.

@@ -134,11 +134,11 @@ export function FarmerSuccessStories() {
 
               {/* Quote */}
               <div className="relative mb-6">
-                <div className="text-6xl text-accent-green/20 absolute -top-4 -left-2">"</div>
+                <div className="text-6xl text-accent-green/20 absolute -top-4 -left-2">&ldquo;</div>
                 <p className="text-lg text-gray-200 leading-relaxed pl-6 italic">
                   {testimonials[activeTestimonial].story}
                 </p>
-                <div className="text-6xl text-accent-green/20 absolute -bottom-8 right-0 rotate-180">"</div>
+                <div className="text-6xl text-accent-green/20 absolute -bottom-8 right-0 rotate-180">&rdquo;</div>
               </div>
 
               {/* Stats */}

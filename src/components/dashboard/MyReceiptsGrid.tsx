@@ -129,7 +129,7 @@ export function MyReceiptsGrid({ onUploadReceipt }: MyReceiptsGridProps) {
           ].map((mode) => (
             <button
               key={mode.key}
-              onClick={() => setViewMode(mode.key as any)}
+              onClick={() => setViewMode(mode.key as typeof viewMode)}
               className={`
                 flex items-center space-x-3 px-6 py-4 rounded-xl font-semibold transition-all duration-300
                 ${viewMode === mode.key 
@@ -198,11 +198,11 @@ export function MyReceiptsGrid({ onUploadReceipt }: MyReceiptsGridProps) {
                     <div className="backdrop-blur-sm bg-white/10 border border-white/20 rounded-xl p-3 mb-4">
                       <div className="flex justify-between text-sm mb-2">
                         <span className="text-gray-400">Loan Eligible:</span>
-                        <span className="text-green-400 font-bold">₹{receipt.loanEligible.toLocaleString()}</span>
+                        <span className="text-green-400 font-bold">₹{(receipt as any).loanEligible?.toLocaleString() || 'N/A'}</span>
                       </div>
                       <div className="flex justify-between text-sm">
                         <span className="text-gray-400">Market Value:</span>
-                        <span className="text-white font-medium">₹{receipt.marketValue.toLocaleString()}</span>
+                        <span className="text-white font-medium">₹{(receipt as any).marketValue?.toLocaleString() || 'N/A'}</span>
                       </div>
                     </div>
                     
@@ -224,11 +224,11 @@ export function MyReceiptsGrid({ onUploadReceipt }: MyReceiptsGridProps) {
                     <div className="backdrop-blur-sm bg-white/10 border border-white/20 rounded-xl p-3 mb-4">
                       <div className="flex justify-between text-sm mb-2">
                         <span className="text-gray-400">Daily Rewards:</span>
-                        <span className="text-purple-400 font-bold">₹{receipt.dailyRewards.toFixed(2)}</span>
+                        <span className="text-purple-400 font-bold">₹{(receipt as any).dailyRewards?.toFixed(2) || 'N/A'}</span>
                       </div>
                       <div className="flex justify-between text-sm">
                         <span className="text-gray-400">APY:</span>
-                        <span className="text-green-400 font-medium">{receipt.apy}%</span>
+                        <span className="text-green-400 font-medium">{(receipt as any).apy || 'N/A'}%</span>
                       </div>
                     </div>
                     
@@ -244,11 +244,11 @@ export function MyReceiptsGrid({ onUploadReceipt }: MyReceiptsGridProps) {
                     <div className="backdrop-blur-sm bg-white/10 border border-white/20 rounded-xl p-3 mb-4">
                       <div className="flex justify-between text-sm mb-2">
                         <span className="text-gray-400">Loan Amount:</span>
-                        <span className="text-orange-400 font-bold">₹{receipt.loanAmount.toLocaleString()}</span>
+                        <span className="text-orange-400 font-bold">₹{(receipt as any).loanAmount?.toLocaleString() || 'N/A'}</span>
                       </div>
                       <div className="flex justify-between text-sm">
                         <span className="text-gray-400">Due Date:</span>
-                        <span className="text-red-400 font-medium">{receipt.loanDueDate}</span>
+                        <span className="text-red-400 font-medium">{(receipt as any).loanDueDate || 'N/A'}</span>
                       </div>
                     </div>
                     

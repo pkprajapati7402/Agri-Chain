@@ -2,10 +2,8 @@
 import { useState, useEffect } from "react";
 
 export function KisanSanchayCard() {
-  const [totalStaked, setTotalStaked] = useState(0);
   const [totalRewards, setTotalRewards] = useState(234.56);
-  const [stakingAPY, setStakingAPY] = useState(18.5);
-  const [rewardsTimer, setRewardsTimer] = useState(0);
+  const stakingAPY = 18.5;
 
   // Mock staked receipts data
   const stakedReceipts = [
