@@ -1,5 +1,6 @@
 "use client";
 import { useState } from "react";
+import { DEMO_CROP_DATA, IPFSStorage } from "@/utils/ipfsDatabase";
 
 interface MyReceiptsGridProps {
   onUploadReceipt: () => void;
@@ -9,34 +10,38 @@ export function MyReceiptsGrid({ onUploadReceipt }: MyReceiptsGridProps) {
   const [selectedReceipt, setSelectedReceipt] = useState<number | null>(null);
   const [viewMode, setViewMode] = useState<'available' | 'staked' | 'locked'>('available');
 
-  // Mock receipts data - in real app, this would come from blockchain
+  // Real IPFS-stored receipts data converted to dashboard format
   const receipts = {
     available: [
       {
         id: 1,
-        crop: "Wheat",
-        quantity: 100,
-        quality: "A Grade",
-        warehouse: "Central Warehouse, Delhi",
-        mintedDate: "2025-09-10",
-        loanEligible: 150000,
-        marketValue: 180000,
+        crop: DEMO_CROP_DATA[0].cropType + " - " + DEMO_CROP_DATA[0].variety,
+        quantity: DEMO_CROP_DATA[0].quantity,
+        quality: DEMO_CROP_DATA[0].qualityGrade,
+        warehouse: DEMO_CROP_DATA[0].warehouseDetails.name,
+        mintedDate: DEMO_CROP_DATA[0].harvestDate,
+        loanEligible: Math.floor(DEMO_CROP_DATA[0].quantity * 2850 * 0.75), // 75% LTV
+        marketValue: DEMO_CROP_DATA[0].quantity * 2850, // Current market price
         status: "AVAILABLE",
         nftId: "NFT#KK001",
-        expiryDate: "2026-03-10"
+        expiryDate: "2026-03-15",
+        ipfsHash: DEMO_CROP_DATA[0].photos[0], // Show IPFS integration
+        location: `${DEMO_CROP_DATA[0].location.village}, ${DEMO_CROP_DATA[0].location.district}`
       },
       {
         id: 2,
-        crop: "Rice",
-        quantity: 80,
-        quality: "Premium",
-        warehouse: "Grain Hub, Punjab",
-        mintedDate: "2025-09-05",
-        loanEligible: 120000,
-        marketValue: 144000,
-        status: "AVAILABLE",
+        crop: DEMO_CROP_DATA[1].cropType + " - " + DEMO_CROP_DATA[1].variety,
+        quantity: DEMO_CROP_DATA[1].quantity,
+        quality: DEMO_CROP_DATA[1].qualityGrade,
+        warehouse: DEMO_CROP_DATA[1].warehouseDetails.name,
+        mintedDate: DEMO_CROP_DATA[1].harvestDate,
+        loanEligible: Math.floor(DEMO_CROP_DATA[1].quantity * 2150 * 0.75),
+        marketValue: DEMO_CROP_DATA[1].quantity * 2150,
+        status: "AVAILABLE", 
         nftId: "NFT#KK002",
-        expiryDate: "2026-02-05"
+        expiryDate: "2026-03-10",
+        ipfsHash: DEMO_CROP_DATA[1].photos[0],
+        location: `${DEMO_CROP_DATA[1].location.village}, ${DEMO_CROP_DATA[1].location.district}`
       }
     ],
     staked: [

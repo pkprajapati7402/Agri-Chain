@@ -1,5 +1,6 @@
 "use client";
 import { useState } from "react";
+import { IPFSStorage, BlockchainIntegration, DEMO_CROP_DATA } from "@/utils/ipfsDatabase";
 
 interface UploadReceiptModalProps {
   isOpen: boolean;
@@ -11,6 +12,8 @@ export function UploadReceiptModal({ isOpen, onClose }: UploadReceiptModalProps)
   const [uploadedFile, setUploadedFile] = useState<File | null>(null);
   const [isDragging, setIsDragging] = useState(false);
   const [isProcessing, setIsProcessing] = useState(false);
+  const [ipfsHash, setIpfsHash] = useState<string | null>(null);
+  const [blockchainTx, setBlockchainTx] = useState<string | null>(null);
   
   // Mock extracted data from uploaded e-NWR
   const [extractedData, setExtractedData] = useState({
@@ -29,14 +32,24 @@ export function UploadReceiptModal({ isOpen, onClose }: UploadReceiptModalProps)
 
   if (!isOpen) return null;
 
-  const handleFileUpload = (file: File) => {
+  const handleFileUpload = async (file: File) => {
     setUploadedFile(file);
-    // Mock processing delay
     setIsProcessing(true);
-    setTimeout(() => {
+    
+    try {
+      // Step 1: Upload to IPFS
+      const hash = await IPFSStorage.storeDocument(file);
+      setIpfsHash(hash);
+      
+      // Step 2: Process and extract data (simulate delay)
+      await new Promise(resolve => setTimeout(resolve, 2000));
+      
       setIsProcessing(false);
       setCurrentStep(2);
-    }, 2000);
+    } catch (error) {
+      console.error('Upload failed:', error);
+      setIsProcessing(false);
+    }
   };
 
   const handleDrop = (e: React.DragEvent) => {

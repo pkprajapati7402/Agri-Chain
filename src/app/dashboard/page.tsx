@@ -12,11 +12,18 @@ import { MyReceiptsGrid } from "@/components/dashboard/MyReceiptsGrid";
 import { ActivityStreamCard } from "@/components/dashboard/ActivityStreamCard";
 import { QuickStatsCard } from "@/components/dashboard/QuickStatsCard";
 import { UploadReceiptModal } from "@/components/dashboard/UploadReceiptModal";
+import { IPFSIntegrationCard } from "@/components/dashboard/IPFSIntegrationCard";
+import { MarketAnalyticsCard } from "@/components/dashboard/MarketAnalyticsCard";
+import { DemoTransactionButton } from "@/components/DemoTransactionButton";
+import { DemoBanner } from "@/components/DemoBanner";
+import { DEMO_CROP_DATA, DEMO_ANALYTICS, BlockchainIntegration } from "@/utils/ipfsDatabase";
 
 export default function Dashboard() {
   const { connected } = useWallet();
   const router = useRouter();
   const [showUploadModal, setShowUploadModal] = useState(false);
+  const [isSimulating, setIsSimulating] = useState(true);
+  const [demoTransactions, setDemoTransactions] = useState(DEMO_ANALYTICS.recentTransactions);
 
   useEffect(() => {
     if (!connected) {
@@ -37,6 +44,7 @@ export default function Dashboard() {
 
   return (
     <div className="min-h-screen flex flex-col bg-gradient-to-br from-primary-dark via-gray-900 to-primary-dark">
+      <DemoBanner />
       <Header />
       
       {/* Background Effects */}
@@ -97,8 +105,18 @@ export default function Dashboard() {
               <KisanSanchayCard />
             </div>
 
-            {/* Activity Stream */}
+            {/* IPFS Integration */}
             <div className="col-span-full md:col-span-1 lg:col-span-2 xl:col-span-2">
+              <IPFSIntegrationCard />
+            </div>
+
+            {/* Market Analytics */}
+            <div className="col-span-full md:col-span-1 lg:col-span-2 xl:col-span-2">
+              <MarketAnalyticsCard />
+            </div>
+
+            {/* Activity Stream */}
+            <div className="col-span-full md:col-span-2 lg:col-span-2 xl:col-span-2">
               <ActivityStreamCard />
             </div>
 
@@ -110,6 +128,9 @@ export default function Dashboard() {
           </div>
         </div>
       </main>
+
+      {/* Demo Transaction Button */}
+      <DemoTransactionButton />
 
       {/* Upload Receipt Modal */}
       {showUploadModal && (

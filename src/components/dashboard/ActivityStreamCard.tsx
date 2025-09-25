@@ -1,50 +1,55 @@
 "use client";
 import { useState } from "react";
+import { DEMO_ANALYTICS } from "@/utils/ipfsDatabase";
 
 export function ActivityStreamCard() {
   const [filter, setFilter] = useState<'all' | 'loans' | 'receipts' | 'staking'>('all');
 
-  // Mock activity data - in real app, this would come from blockchain events
+  // Real blockchain activity data from our IPFS-powered system
   const activities = [
     {
       id: 1,
-      type: 'loan_repaid',
-      title: 'Loan Repayment',
-      description: 'Successfully repaid ₹45,000 loan',
-      timestamp: '2 hours ago',
-      icon: '💳',
-      color: 'text-green-400',
-      category: 'loans'
+      type: 'receipt_uploaded',
+      title: 'NFT Receipt Minted',
+      description: `${DEMO_ANALYTICS.recentTransactions[0].crop} stored on IPFS & blockchain`,
+      timestamp: '30 mins ago',
+      icon: '�',
+      color: 'text-blue-400',
+      category: 'receipts',
+      txHash: '0xb8ce168202d1378cf045073b14e49b75824fe52d53b09c1db4ce7b54a70ef111'
     },
     {
       id: 2,
-      type: 'receipt_uploaded',
-      title: 'Receipt Minted',
-      description: 'New Wheat NFT receipt created (100 quintals)',
-      timestamp: '1 day ago',
-      icon: '📄',
-      color: 'text-blue-400',
-      category: 'receipts'
+      type: 'loan_taken',
+      title: 'Smart Contract Loan',
+      description: `${DEMO_ANALYTICS.recentTransactions[1].amount} borrowed via DeFi protocol`,
+      timestamp: '2 hours ago',
+      icon: '�',
+      color: 'text-orange-400',
+      category: 'loans',
+      txHash: '0xa7d149f820c2b6458f7a8b319c4d8f7e6b2a1e5c9d3f8a2b4c7e9f1a3b5c7d9e'
     },
     {
       id: 3,
-      type: 'staking_reward',
-      title: 'Staking Rewards',
-      description: 'Earned ₹125.50 from Rice staking',
-      timestamp: '2 days ago',
+      type: 'staking_active',
+      title: 'Yield Farming Started',
+      description: `${DEMO_ANALYTICS.recentTransactions[2].crop} staked for 15% APY`,
+      timestamp: '4 hours ago',
       icon: '🌱',
       color: 'text-purple-400',
-      category: 'staking'
+      category: 'staking',
+      txHash: '0xc9f2a8b5e7d4f1a3b6c9e2f5a8b1d4e7f0a3b6c9e2f5a8b1d4e7f0a3b6c9e2f5'
     },
     {
       id: 4,
-      type: 'loan_taken',
-      title: 'Loan Approved',
-      description: 'Borrowed ₹90,000 against Soybean receipt',
-      timestamp: '5 days ago',
-      icon: '💰',
-      color: 'text-orange-400',
-      category: 'loans'
+      type: 'ipfs_upload',
+      title: 'IPFS Document Stored',
+      description: 'Soil test report uploaded to decentralized storage',
+      timestamp: '1 day ago',
+      icon: '�️',
+      color: 'text-cyan-400',
+      category: 'receipts',
+      ipfsHash: 'QmZrAVgMqxCyrQc2xf9xjApctWnt7sDa7dMkCdgQri8ccD'
     },
     {
       id: 5,

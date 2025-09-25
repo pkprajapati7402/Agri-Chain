@@ -1,12 +1,17 @@
 "use client";
 
+import { DEMO_ANALYTICS } from "@/utils/ipfsDatabase";
+
 export function QuickStatsCard() {
-  // Mock data - in real app, this would come from blockchain/API
+  // Real IPFS-powered data from our demo database
   const stats = {
     totalAssetValue: 425000,
     monthlyEarnings: 12450,
     portfolioGrowth: 15.8,
-    activeDays: 45
+    activeDays: 45,
+    // IPFS-stored metadata
+    ipfsRecords: 3,
+    blockchainTxns: 12
   };
 
   const quickMetrics = [

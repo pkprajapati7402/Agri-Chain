@@ -12,6 +12,7 @@
     "@aptos-labs/wallet-adapter-core": "^7.4.0",
     "@aptos-labs/wallet-adapter-react": "^7.1.0",
     "@heroicons/react": "^2.2.0",
+    "ipfs-http-client": "^60.0.1",
     "next": "15.5.4",
     "react": "19.1.0",
     "react-dom": "19.1.0"
