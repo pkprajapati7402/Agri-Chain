@@ -42,16 +42,26 @@ export function Header() {
   ];
 
   return (
-    <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
-      isScrolled 
-        ? "backdrop-blur-xl bg-primary-dark/90 border-b border-accent-green/20 shadow-2xl shadow-accent-green/10" 
-        : "backdrop-blur-md bg-white/5 border-b border-white/10"
-    }`}>
-      {/* Animated background gradient */}
-      <div className="absolute inset-0 bg-gradient-to-r from-accent-green/5 via-transparent to-blue-500/5 animate-pulse opacity-30"></div>
-      
-      {/* Glowing top border */}
-      <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-accent-green to-transparent"></div>
+    <div className="fixed top-0 left-0 right-0 z-50">
+      {/* Enhanced Top Separator Line */}
+      <div className="relative h-1">
+        {/* Main separator line */}
+        <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-accent-green to-transparent shadow-lg shadow-accent-green/50"></div>
+        {/* Double line effect */}
+        <div className="absolute top-0.5 left-0 right-0 h-px bg-gradient-to-r from-transparent via-accent-green/30 to-transparent"></div>
+        {/* Animated glow */}
+        <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-accent-green to-transparent animate-pulse opacity-80"></div>
+        {/* Subtle background */}
+        <div className="absolute inset-0 bg-gradient-to-b from-accent-green/10 to-transparent"></div>
+      </div>
+
+      <nav className={`transition-all duration-500 ${
+        isScrolled 
+          ? "backdrop-blur-xl bg-primary-dark/90 border-b border-accent-green/20 shadow-2xl shadow-accent-green/10" 
+          : "backdrop-blur-md bg-white/5 border-b border-white/10"
+      }`}>
+        {/* Animated background gradient */}
+        <div className="absolute inset-0 bg-gradient-to-r from-accent-green/5 via-transparent to-blue-500/5 animate-pulse opacity-30"></div>
       
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-20">
@@ -175,12 +185,13 @@ export function Header() {
         </div>
       </div>
 
-      {/* Floating particles effect */}
-      <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        <div className="absolute top-1/2 left-1/4 w-1 h-1 bg-accent-green rounded-full animate-float opacity-60"></div>
-        <div className="absolute top-1/3 right-1/3 w-1 h-1 bg-blue-400 rounded-full animate-float-delayed opacity-40"></div>
-        <div className="absolute bottom-1/2 right-1/4 w-0.5 h-0.5 bg-accent-green rounded-full animate-float-slow opacity-80"></div>
-      </div>
-    </nav>
+        {/* Floating particles effect */}
+        <div className="absolute inset-0 overflow-hidden pointer-events-none">
+          <div className="absolute top-1/2 left-1/4 w-1 h-1 bg-accent-green rounded-full animate-float opacity-60"></div>
+          <div className="absolute top-1/3 right-1/3 w-1 h-1 bg-blue-400 rounded-full animate-float-delayed opacity-40"></div>
+          <div className="absolute bottom-1/2 right-1/4 w-0.5 h-0.5 bg-accent-green rounded-full animate-float-slow opacity-80"></div>
+        </div>
+      </nav>
+    </div>
   );
 }
