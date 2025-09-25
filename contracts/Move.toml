@@ -1,0 +1,16 @@
+[package]
+name = "KisanKosh"
+version = "1.0.0"
+authors = []
+
+[addresses]
+KisanKosh = "0x47e217b930dc33de69987ac3e780fbf90f5059dbd098136300c40382376e295b"
+
+[dev-addresses]
+
+[dependencies.AptosFramework]
+git = "https://github.com/aptos-labs/aptos-core.git"
+rev = "mainnet"
+subdir = "aptos-move/framework/aptos-framework"
+
+[dev-dependencies]
