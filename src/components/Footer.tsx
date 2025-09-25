@@ -1,8 +1,14 @@
 "use client";
 import Link from "next/link";
+import { useEffect, useState } from "react";
 
 export function Footer() {
-  const currentYear = new Date().getFullYear();
+  const [currentYear, setCurrentYear] = useState(2025); // Default fallback
+  
+  useEffect(() => {
+    // Set the current year on the client side to avoid hydration mismatch
+    setCurrentYear(new Date().getFullYear());
+  }, []);
   
   const socialLinks = [
     { 
@@ -84,7 +90,7 @@ export function Footer() {
                   </svg>
                 </div>
                 <div>
-                  <h3 className="text-xl font-bold bg-gradient-to-r from-accent-green to-green-400 bg-clip-text text-transparent">
+                  <h3 className="text-xl font-bold bg-gradient-to-r from-green-300 to-green-400 bg-clip-text text-transparent">
                     Kisan Kosh
                   </h3>
                   <p className="text-xs text-gray-400 tracking-wider">AGRI-CHAIN PLATFORM</p>
@@ -182,9 +188,13 @@ export function Footer() {
                   <input
                     type="email"
                     placeholder="Enter email"
+                    suppressHydrationWarning={true}
                     className="flex-1 px-3 py-2 bg-white/5 border border-white/10 rounded-l-lg text-white text-sm placeholder-gray-500 focus:outline-none focus:border-accent-green/50 focus:bg-white/10 transition-all duration-300"
                   />
-                  <button className="px-4 py-2 bg-gradient-to-r from-accent-green to-green-400 text-black rounded-r-lg hover:from-green-400 hover:to-accent-green transition-all duration-300 hover:shadow-lg hover:shadow-accent-green/25">
+                  <button 
+                    suppressHydrationWarning={true}
+                    className="px-4 py-2 bg-gradient-to-r from-accent-green to-green-400 text-black rounded-r-lg hover:from-green-400 hover:to-accent-green transition-all duration-300 hover:shadow-lg hover:shadow-accent-green/25"
+                  >
                     <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8" />
                     </svg>

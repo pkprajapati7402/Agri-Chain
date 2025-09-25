@@ -69,7 +69,7 @@ export function Header() {
           <Link href="/" className="flex items-center space-x-3 group">
             {/* Logo Icon */}
             <div className="relative">
-              <div className="w-10 h-10 bg-gradient-to-br from-accent-green to-green-400 rounded-xl flex items-center justify-center shadow-lg shadow-accent-green/25 group-hover:shadow-accent-green/40 transition-all duration-300 group-hover:scale-110">
+              <div className="w-10 h-10 bg-gradient-to-br from-green-300 to-green-400 rounded-xl flex items-center justify-center shadow-lg shadow-accent-green/25 group-hover:shadow-accent-green/40 transition-all duration-300 group-hover:scale-110">
                 <svg className="w-6 h-6 text-black" fill="currentColor" viewBox="0 0 24 24">
                   <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
                 </svg>
@@ -80,7 +80,7 @@ export function Header() {
             
             {/* Logo Text */}
             <div>
-              <h1 className="text-2xl font-bold bg-gradient-to-r from-accent-green via-green-400 to-emerald-300 bg-clip-text text-transparent group-hover:from-green-300 group-hover:to-accent-green transition-all duration-500">
+              <h1 className="text-2xl font-bold bg-gradient-to-r from-green-300 via-green-400 to-emerald-300 bg-clip-text text-transparent group-hover:from-green-300 group-hover:to-accent-green transition-all duration-500">
                 Kisan Kosh
               </h1>
               <p className="text-xs text-gray-400 tracking-wider">AGRI-CHAIN</p>
@@ -121,20 +121,21 @@ export function Header() {
             {/* Connect Wallet Button */}
             <button
               onClick={handleConnectWallet}
+              suppressHydrationWarning={true}
               className={`relative group px-6 py-3 rounded-xl font-semibold transition-all duration-300 overflow-hidden ${
                 connected
                   ? "bg-gradient-to-r from-gray-800 to-gray-700 text-white border border-gray-600 hover:border-accent-green/50"
-                  : "bg-gradient-to-r from-accent-green to-green-400 text-black hover:from-green-400 hover:to-accent-green shadow-lg shadow-accent-green/25 hover:shadow-accent-green/40 hover:scale-105"
+                  : "bg-gradient-to-r from-green-300 to-green-400 text-black hover:from-green-400 hover:to-accent-green shadow-lg shadow-accent-green/25 hover:shadow-accent-green/40 hover:scale-105"
               }`}
             >
               {/* Button background animation */}
-              <div className="absolute inset-0 bg-gradient-to-r from-accent-green/20 to-green-400/20 translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-700"></div>
+              <div className="absolute inset-0 bg-gradient-to-r from-green-300/20 to-green-400/20 translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-700"></div>
               
               {/* Button content */}
               <div className="relative flex items-center space-x-2">
                 {connected ? (
                   <>
-                    <div className="w-2 h-2 bg-accent-green rounded-full animate-pulse"></div>
+                    <div className="w-2 h-2 bg-green-300 rounded-full animate-pulse"></div>
                     <span className="text-sm">
                       {account?.address ? formatAddress(account.address.toString()) : "Connected"}
                     </span>
@@ -153,6 +154,7 @@ export function Header() {
             {/* Mobile Menu Button */}
             <button
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+              suppressHydrationWarning={true}
               className="md:hidden p-2 rounded-lg bg-white/5 border border-white/10 hover:bg-white/10 transition-colors duration-300"
             >
               <svg className={`w-6 h-6 text-gray-300 transition-transform duration-300 ${isMobileMenuOpen ? 'rotate-90' : ''}`} fill="none" stroke="currentColor" viewBox="0 0 24 24">

@@ -55,6 +55,7 @@ export function HeroSection() {
         {/* CTA Button */}
         <button
           onClick={handleConnectWallet}
+          suppressHydrationWarning={true}
           className="bg-accent-green hover:bg-green-400 text-black font-bold text-lg md:text-xl px-12 py-4 rounded-lg transition-all duration-300 hover:shadow-2xl hover:shadow-accent-green/25 hover:scale-105"
         >
           {connected ? "Go to Dashboard" : "Connect Wallet to Start"}
