@@ -33,7 +33,7 @@ export function HeroSection() {
       />
       
       {/* Content */}
-      <div className="relative z-10 text-center px-4 sm:px-6 lg:px-8 max-w-5xl mx-auto">
+      <div className="relative z-10 text-center px-4 sm:px-6 lg:px-8 max-w-5xl mx-auto mt-15">
         <div className="mb-8">
           {/* Hindi Headline */}
           <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold mb-4 bg-gradient-to-r from-white via-accent-green to-green-400 bg-clip-text text-transparent">
@@ -56,7 +56,7 @@ export function HeroSection() {
         <button
           onClick={handleConnectWallet}
           suppressHydrationWarning={true}
-          className="bg-accent-green hover:bg-green-400 text-black font-bold text-lg md:text-xl px-12 py-4 rounded-lg transition-all duration-300 hover:shadow-2xl hover:shadow-accent-green/25 hover:scale-105"
+          className="bg-green-300 hover:bg-green-400 text-black font-bold text-lg md:text-xl px-12 py-4 rounded-lg transition-all duration-300 hover:shadow-2xl hover:shadow-accent-green/25 hover:scale-105"
         >
           {connected ? "Go to Dashboard" : "Connect Wallet to Start"}
         </button>

@@ -77,6 +77,8 @@ export function Footer() {
       </div>
 
       <div className="relative">
+        {/* Add a thin horizontal line from left edge to right edge in white color here. */}
+        <div className="absolute top-0 left-0 right-0 h-px bg-white/10"></div>
         {/* Main footer content */}
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-16 pb-8">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
