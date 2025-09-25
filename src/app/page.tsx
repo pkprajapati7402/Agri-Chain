@@ -2,6 +2,11 @@ import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { HeroSection } from "@/components/landing/HeroSection";
 import { HowItWorks } from "@/components/landing/HowItWorks";
+import { PartnersEcosystem } from "@/components/landing/PartnersEcosystem";
+import { WhyKisanKosh } from "@/components/landing/WhyKisanKosh";
+import { OurTechnology } from "@/components/landing/OurTechnology";
+import { FarmerSuccessStories } from "@/components/landing/FarmerSuccessStories";
+import { ComprehensiveFAQ } from "@/components/landing/ComprehensiveFAQ";
 
 export default function Home() {
   return (
@@ -10,6 +15,11 @@ export default function Home() {
       <main className="flex-1">
         <HeroSection />
         <HowItWorks />
+        <PartnersEcosystem />
+        <WhyKisanKosh />
+        <OurTechnology />
+        <FarmerSuccessStories />
+        <ComprehensiveFAQ />
       </main>
       <Footer />
     </div>

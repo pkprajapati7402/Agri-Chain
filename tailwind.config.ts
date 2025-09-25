@@ -24,6 +24,13 @@ const config: Config = {
         'glow': 'glow 2s ease-in-out infinite alternate',
         'shimmer': 'shimmer 2.5s linear infinite',
       },
+      animationDelay: {
+        '100': '100ms',
+        '200': '200ms',
+        '300': '300ms',
+        '400': '400ms',
+        '500': '500ms',
+      },
       keyframes: {
         float: {
           '0%, 100%': { transform: 'translateY(0px)' },
