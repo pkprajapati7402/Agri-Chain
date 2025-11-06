@@ -1062,7 +1062,7 @@ class CropYieldPredictor:
 **Platform Architecture:**
 ```mermaid
 graph TB
-    A[Farmers] --> B[KisanKosh Core Platform]
+    A[Farmers] --> B[AgriChain Core Platform]
     B --> C[Input Suppliers]
     B --> D[Processing Units]
     B --> E[Export Markets]
