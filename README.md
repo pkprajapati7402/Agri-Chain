@@ -187,8 +187,3 @@ This project is licensed under the **MIT License**. See [LICENSE](LICENSE) for d
 </div>
 
 
----
-
-⚡ All set — a single ready-to-drop README.md file.
-
-Do you also want me to create a *compressed 1-page hackathon version* (super short, only the problem, solution, impact, and tech) for quick judging?
