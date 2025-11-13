@@ -156,7 +156,7 @@ We welcome contributions in **development, UI/UX, regional language support, and
 
 bash
 # Fork & clone repo
-git clone https://github.com/yourusername/kisan-kosh.git
+git clone https://github.com/pkprajapati7402/agri-chain.git
 
 # Install dependencies
 npm install
